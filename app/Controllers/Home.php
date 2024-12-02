@@ -2,11 +2,20 @@
 
 namespace App\Controllers;
 
+use App\Models\KostModel;
+
 class Home extends BaseController
 {
     public function index(): string
     {
-        return view('auth/login');
+        $kostModel = new KostModel();
+        $kost = $kostModel->findAll();
+
+        $data = [
+            'kost' => $kost
+        ];
+
+        return view('user/dashboard', $data);
     }
 
     public function register()

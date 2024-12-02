@@ -25,7 +25,7 @@
       style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(189, 167, 248) 0%, rgba(224,170,193,1) 100%)">
       <div class="container">
         <a class="navbar-brand" href="">
-            <img src="<?= base_url();?>/img/logokostkita.png" alt="Logo Kost Kita" width="auto" height="30" class="d-inline-block align-text-top" style="margin-right: 8px;">
+            <img src="<?= base_url('/img/logokostkita.png');?>" alt="Logo Kost Kita" width="auto" height="30" class="d-inline-block align-text-top" style="margin-right: 8px;">
         </a>
         <button
           class="navbar-toggler"
@@ -44,7 +44,7 @@
               <a class="nav-link" href="<?= url_to('logout'); ?>">Sewa Kost</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Halo, User</a>
+              <a class="nav-link" href=""><?= user()->username; ?></a>
             </li>
           </ul> 
         </div>
@@ -65,7 +65,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="35" style="margin-right: 8px;">
       </a>
       <a href="mailto:info@kostkita.com" style="text-decoration: none; color: #333;">
-        <img src="<?= base_url();?>/img/gmail.webp" alt="Email Logo" width="35" style="margin-right: 8px;">
+        <img src="<?= base_url('/img/gmail.webp');?>" alt="Email Logo" width="35" style="margin-right: 8px;">
       </a>
     </div>
     <div class="container text-center pt-5 pb-5" style="margin-top: -20px;">
