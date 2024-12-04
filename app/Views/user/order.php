@@ -39,7 +39,7 @@
 
                 <div class="mt-3">
                     <button type="submit" class="btn btn-primary">Pesan</button>
-                    <a href="" class="btn btn-secondary">Kembali</a>
+                    <a href="<?= base_url('/user/' . $kost['slug']); ?>" class="btn btn-secondary">Kembali</a>
                 </div>
             </form>
         </div>

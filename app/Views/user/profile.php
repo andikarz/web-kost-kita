@@ -39,7 +39,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a href="<?= url_to('logout'); ?>" class="nav-link link-dark">
               <i class="bx bx-user me-2"></i> Keluar
             </a>
           </li>

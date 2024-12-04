@@ -3,7 +3,6 @@
 <?= $this->section('content'); ?>
 
     <!-- Slides -->
-<div class="container">
   <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-5"  data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -274,6 +273,5 @@
         </div>
     </div>
   </div>
-</div>
 
 <?= $this->endSection(); ?>
