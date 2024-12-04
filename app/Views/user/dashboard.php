@@ -4,7 +4,7 @@
 
     <!-- Slides -->
 <div class="container">
-  <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-5"  data-bs-ride="carousel" style="background-size: cover;" >
+  <div id="carouselExampleCaptions" class="carousel carousel-dark slide mb-5"  data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -12,20 +12,20 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active" style="height: 500px;">
-        <img src="slide3.jpg" class="d-block w-100" alt="...">
+        <img src="<?= base_url('/img/carousel-1.png'); ?>" class="d-block w-100" alt="...">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center" style="color:rgb(255, 255, 255); height: 100%;">
           <h2 class="display-5 fw-bold">Selamat Datang di Kost Kita</h2>
         </div>
       </div>
       <div class="carousel-item" style="height: 500px;">
-        <img src="slide2.webp" class="d-block w-100" alt="...">
+        <img src="<?= base_url('/img/carousel-2.png'); ?>" class="d-block w-100" alt="...">
         <div class="carousel-caption d-flex flex-column justify-content-center align-items-end text-end" style="color:rgb(0, 0, 0); height: 100%;">
           <h5 class="display-6 fw-bold">Desain Kamar Milenial</h5>
           <p class="fw-bold">Harga mulai dari 1 jutaan</p>
         </div>
       </div>
       <div class="carousel-item" style="height: 500px;">
-        <img src="slide1.png" class="d-block w-100" alt="...">
+        <img src="<?= base_url('/img/carousel-3.png'); ?>" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block" style="color: white;">
           <h5 class="display-6 fw-bold">Jangan Takut Merantau</h5>
           <p>Kost Kita memfasilitasi berbagai kost sesuai kebutuhan Anda</p>

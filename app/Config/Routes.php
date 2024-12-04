@@ -8,6 +8,9 @@ use CodeIgniter\Router\RouteCollection;
 // Route Awal
 $routes->get('/', 'Home::index', ['filter' => 'roleRedirect']);
 
+$routes->get('/user/profile', 'Profile::index', ['filter' => 'role:user']);
+$routes->post('/user/update', 'Profile::updateUser', ['filter' => 'role:user']);
+
 // Route User
 $routes->get('/user', 'User::index', ['filter' => 'role:user']);
 $routes->get('/user/(:segment)', 'User::detail/$1', ['filter' => 'role:user']);
