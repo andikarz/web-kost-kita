@@ -23,4 +23,6 @@ $routes->get('/user/order/payment/success/(:segment)', 'Payment::success/$1');
 
 // Route Admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
-$routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin/profile', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin/kost', 'Admin::kost', ['filter' => 'role:admin']);
+$routes->get('/admin/report', 'Admin::report', ['filter' => 'role:admin']);

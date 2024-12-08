@@ -89,10 +89,14 @@ class Payment extends BaseController
             'status' => 'SUCCESS'
         ];
 
+        $data2 = [
+            'title' => 'Pembayaran Berhasil'
+        ];
+
         $this->orderModel->update($id_order, $data);
 
         // Tampilkan halaman sukses pembayaran
-        return view('user/payment_success');
+        return view('user/payment_success', $data2);
     }
     
 }

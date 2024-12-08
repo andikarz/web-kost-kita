@@ -36,10 +36,9 @@
         <!-- Fasilitas -->
         <div class="row mt-4">
           <div class="col-12">
+            <p><strong>Luas Kamar:</strong> 3 m x 4 m</p>
             <p><strong>Fasilitas:</strong></p>
             <p><?= $kost['description']; ?></p>
-            <p><strong>Luas Kamar:</strong> 3 m x 4 m</p>
-            <p><strong>Deskripsi:</strong><?= $kost['description']; ?></p>
           </div>
         </div>
       </div>

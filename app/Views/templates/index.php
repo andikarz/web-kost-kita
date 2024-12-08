@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse text-right" id="navbarText">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="<?= url_to('logout'); ?>">Sewa Kost</a>
+              <a class="nav-link" href="">Sewa Kost</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= base_url('/user/profile'); ?>"><?= user()->username; ?></a>
@@ -53,27 +53,27 @@
     
 <?= $this->renderSection('content'); ?>
 
-<!-- Kontak -->
-<div class="container-fluid pt-5 pb-5" style="padding-bottom: 0; margin-bottom: 0; background-color: rgb(189, 167, 248);">
-  <div class="container text-center">
-    <h2 class="fw-bold">Hubungi Kami</h2>
-    <p class="text-center">
-      Jika Anda membutuhkan bantuan lebih lanjut, silakan hubungi kami melalui kontak di bawah ini. Kami siap membantu Anda menemukan kost yang sesuai dengan kebutuhan Anda.
-    </p>
-    <div class="pt-3">
-      <a href="https://wa.me/689630417804" target="_blank" style="text-decoration: none;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="35" style="margin-right: 8px;">
-      </a>
-      <a href="mailto:info@kostkita.com" style="text-decoration: none; color: #333;">
-        <img src="<?= base_url('/img/gmail.webp');?>" alt="Email Logo" width="35" style="margin-right: 8px;">
-      </a>
+    <!-- Kontak -->
+    <div class="container-fluid pt-5 pb-5" style="padding-bottom: 0; margin-bottom: 0; background-color: rgb(189, 167, 248);">
+      <div class="container text-center">
+        <h2 class="fw-bold">Hubungi Kami</h2>
+        <p class="text-center">
+          Jika Anda membutuhkan bantuan lebih lanjut, silakan hubungi kami melalui kontak di bawah ini. Kami siap membantu Anda menemukan kost yang sesuai dengan kebutuhan Anda.
+        </p>
+        <div class="pt-3">
+          <a href="https://wa.me/689630417804" target="_blank" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="35" style="margin-right: 8px;">
+          </a>
+          <a href="mailto:info@kostkita.com" style="text-decoration: none; color: #333;">
+            <img src="<?= base_url('/img/gmail.webp');?>" alt="Email Logo" width="35" style="margin-right: 8px;">
+          </a>
+        </div>
+        <div class="container text-center pt-5 pb-5" style="margin-top: -20px;">
+          &copy; 2024 Kost Kita. 
+          <p>Semua hak dilindungi undang-undang</p>
+        </div>
+      </div>
     </div>
-    <div class="container text-center pt-5 pb-5" style="margin-top: -20px;">
-       &copy; 2024 Kost Kita. 
-       <p>Semua hak dilindungi undang-undang</p>
-    </div>
-  </div>
-</div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"

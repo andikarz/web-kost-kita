@@ -65,23 +65,16 @@
       <!-- Informasi Kamar -->
       <div class="col-md-4">
         <div class="card">
-        <div class="card-body">
+          <div class="card-body">
             <h5 class="card-title"><?= $kost['name']; ?></h5>
             <h6>Kost <?= $kost['type']; ?></h6>
             <div class="d-flex align-items" style="font-size: 0.9rem;">
             <img src="<?= base_url('/img/maps.png') ?>" alt="Map" class="d-inline-block" style="width: auto; height: 20px; margin-right: 10px;">
             <p class="m-0"><i class="bi bi-geo-alt"></i><?= $kost['address']; ?></p>
-            </div>
+          </div>
           <img src="<?= base_url('/img/kost/' . $kost['image']) ?>" class="card-img-top" style="margin-top: 10px;" alt="Kamar Kost">  
-          <p class="card-body fw-bold">(1x) Single Bed</p>       
-            <ul style="margin-top: -30px; font-size: 0.9rem;">
-              <li>Spring bed + bantal</li>
-              <li>Lemari baju</li>
-              <li>Kamar mandi dalam</li>
-              <li>WiFi bersama</li>
-              <li>Kulkas bersama</li>
-              <li>Dapur bersama</li>
-            </ul>
+          <p><strong>Fasilitas:</strong></p>
+            <p><?= $kost['description']; ?></p>
             <p class="mt-2"><strong>Harga Bulanan:</strong>Rp <?= number_format($kost['price'], 0, ',', '.'); ?></p>
             <p class="mt-2">1 bulan</p>
           </div>
