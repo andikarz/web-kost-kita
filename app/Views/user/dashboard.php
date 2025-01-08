@@ -46,8 +46,8 @@
   <div class="container mb-5" style="margin-top: -30px;">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Ketik lokasi sekitar Purwokerto atau Nama kost" aria-label="Search">
+        <form action="" method="get" class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Ketik lokasi sekitar Purwokerto atau Nama kost" name="keyword" aria-label="Search">
           <button class="btn" type="submit" style="width: 150px; background-color: rgba(224,170,193,1) ; color: rgb(0, 0, 0);">Cari Kost</button>
         </form>
       </div>

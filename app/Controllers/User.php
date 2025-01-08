@@ -17,8 +17,15 @@ class User extends BaseController
     // Fungsi untuk menampilkan halaman utama user (dashboard)
     public function index(): string
     {
+        $keyword = $this->request->getVar('keyword');
+
+        if($keyword){
+            $kost = $this->kostModel->search($keyword);
+        }else{
+            $kost = $this->kostModel->findAll();
+        }
+
         // Ambil semua data kost dari database
-        $kost = $this->kostModel->findAll();
 
         // Data yang akan dikirimkan ke view
         $data = [

@@ -14,24 +14,39 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="<?= base_url('/admin/profile'); ?>" class="nav-link active" aria-current="page" style="background-color:
-           rgb(222, 164, 173);">
-            <i class="bx bx-profil-alt me-2"></i> Profile
+          <a href="<?= base_url('/admin/profile'); ?>"
+            class="nav-link active d-flex align-items-center" aria-current="page" 
+            style="background-color: rgb(222, 164, 173); border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/profil.png');?>" alt="profil" class="me-2"
+              style="width: 17px; height: 17px; background-color: rgb(222, 164, 173); border-radius: 50%;">
+            Profile
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/admin/kost'); ?>" class="nav-link link-dark">
-            <i class="bx bx-daftarKost me-2"></i> Daftar Kost
+          <a href="<?= base_url('/admin/kost'); ?>" class="nav-link link-dark d-flex align-items-center" 
+            style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/daftarKost.png');?>" alt="daftarKost" class="me-2"
+              style="width: 17px; height: 17px; border-radius: 50%;">
+            Daftar Kost
           </a>
         </li>
-        <li>
-          <a href="<?= base_url('/admin/report'); ?>" class="nav-link link-dark">
-            <i class="bx bx-report me-2"></i> Report
+        <li class="nav-item">
+          <a href="<?= base_url('/admin/report'); ?>" class="nav-link link-dark d-flex align-items-center" 
+            style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/report.png');?>" alt="report" class="me-2"
+              style="width: 17px; height: 17px; border-radius: 50%;">
+            Report
           </a>
         </li>
-        <li>
-          <a href="<?= url_to('logout'); ?>" class="nav-link link-dark">
-            <i class="bx bx-keluar me-2"></i> Keluar
+        <li class="nav-item">
+          <a href="<?= url_to('logout'); ?>" 
+             class="nav-link link-dark d-flex align-items-center" 
+             style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/keluar.png');?>" 
+                 alt="keluar" 
+                 class="me-2"
+                 style="width: 17px; height: 17px; border-radius: 50%;">
+            Keluar
           </a>
         </li>
       </ul>
@@ -47,7 +62,7 @@
               <?= session()->getFlashdata('pesan'); ?>
           </div>
         <?php endif; ?>
-        <form action="<?= base_url('/user/update'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('/admin/update'); ?>" method="post" enctype="multipart/form-data">
           <?= csrf_field(); ?>
           <div class="mb-3">
               <label for="fullname" class="form-label">Nama Lengkap sesuai KTP *</label>

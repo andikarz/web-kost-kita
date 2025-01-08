@@ -24,7 +24,7 @@
       class="navbar navbar-expand-lg navbar-light fixed-top" 
       style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(189, 167, 248) 0%, rgba(224,170,193,1) 100%)">
       <div class="container">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="<?= base_url('/'); ?>">
             <img src="<?= base_url('/img/logokostkita.png');?>" alt="Logo Kost Kita" width="auto" height="30" class="d-inline-block align-text-top" style="margin-right: 8px;">
         </a>
         <button
@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse text-right" id="navbarText">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="">Sewa Kost</a>
+              <a class="nav-link" href="<?= base_url('/'); ?>">Sewa Kost</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= base_url('/user/profile'); ?>"><?= user()->username; ?></a>

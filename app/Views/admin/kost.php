@@ -14,24 +14,39 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="<?= base_url('/admin/profile'); ?>" class="nav-link link-dark">
-            <i class="bx bx-profil-alt me-2"></i> Profile
+          <a href="<?= base_url('/admin/profile'); ?>" class="nav-link link-dark d-flex align-items-center" 
+             style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/profil.png');?>" alt="profil" class="me-2"
+                 style="width: 17px; height: 17px; border-radius: 50%;">
+            Profile
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/admin/kost'); ?>" class="nav-link active" aria-current="page" style="background-color:
-            rgb(222, 164, 173);">
-            <i class="bx bx-daftarKost me-2"></i> Daftar Kost
+          <a href="<?= base_url('/admin/kost'); ?>"
+            class="nav-link active d-flex align-items-center" aria-current="page" 
+            style="background-color: rgb(222, 164, 173); border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/daftarKost.png');?>" alt="daftarKost" class="me-2"
+              style="width: 17px; height: 17px; background-color: rgb(222, 164, 173); border-radius: 50%;">
+            Daftar Kost
           </a>
         </li>
-        <li>
-          <a href="<?= base_url('/admin/report'); ?>" class="nav-link link-dark">
-            <i class="bx bx-report me-2"></i> Report
+        <li class="nav-item">
+          <a href="<?= base_url('/admin/report'); ?>" class="nav-link link-dark d-flex align-items-center" 
+            style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/report.png');?>" alt="report" class="me-2"
+              style="width: 17px; height: 17px; border-radius: 50%;">
+            Report
           </a>
         </li>
-        <li>
-          <a href="<?= url_to('logout'); ?>" class="nav-link link-dark">
-            <i class="bx bx-keluar me-2"></i> Keluar
+        <li class="nav-item">
+          <a href="<?= url_to('logout'); ?>" 
+             class="nav-link link-dark d-flex align-items-center" 
+             style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/keluar.png');?>" 
+                 alt="keluar" 
+                 class="me-2"
+                 style="width: 17px; height: 17px; border-radius: 50%;">
+            Keluar
           </a>
         </li>
       </ul>
@@ -41,10 +56,13 @@
     <!-- Form Daftar Kost -->
     <div class="col-md-8 p-2 mx-auto" style="background: rgb(240, 240, 255); border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-size: 13px;">
       <h4 class="text-center mb-4 fw-bold">Daftar Kost</h4>
+      <?php if (session()->getFlashdata('success')): ?>
+          <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+      <?php endif; ?>
       <form>
         <div class="d-flex justify-content-between mb-3">
           <input type="text" class="form-control w-50" placeholder="Search...">
-          <button class="btn btn-primary">+ Tambah Kost</button>
+          <a type="button" href="<?= base_url('/admin/create');?>" class="btn btn-primary">+ Tambah Kost</a>
         </div>
         <div class="table-responsive">
           <table class="table table-bordered">
@@ -60,32 +78,23 @@
               </tr>
             </thead>
             <tbody>
+              <?php $i=1; ?>
+              <?php foreach ($kost as $k) : ?>
               <tr>
-                <td>1</td>
-                <td>Rumah Kost Ummi</td>
-                <td>Jl. Karangsalam No.2, Banyumas</td>
-                <td>Putri</td>
-                <td>Rp 800.000</td>
-                <td>20</td>
+                <td><?= $i++; ?></td>
+                <td><?= $k['name'] ?></td>
+                <td><?= $k['address'] ?></td>
+                <td><?= $k['type'] ?></td>
+                <td><?= $k['price'] ?></td>
+                <td><?= $k['capacity'] ?></td>
                 <td>
                   <button class="btn btn-primary btn-sm">Detail</button>
-                  <button class="btn btn-success btn-sm">Edit</button>
-                  <button class="btn btn-danger btn-sm">Hapus</button>
+                  <a href="<?= base_url('/admin/edit/' . $k['id']); ?>" class="btn btn-success btn-sm">Edit</a>
+                  <a href="<?= base_url('/admin/delete/' . $k['id']); ?>" 
+                  class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kost ini?')">Hapus</a>
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Rumah Kost Abi</td>
-                <td>Jl. Karangsalam No.7, Banyumas</td>
-                <td>Putra</td>
-                <td>Rp 850.000</td>
-                <td>10</td>
-                <td>
-                  <button class="btn btn-primary btn-sm">Detail</button>
-                  <button class="btn btn-success btn-sm">Edit</button>
-                  <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
-              </tr>
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>

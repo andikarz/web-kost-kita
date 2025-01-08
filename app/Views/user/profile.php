@@ -14,33 +14,47 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page" style="background-color: rgb(222, 164, 173);">
-              <i class="bx bx-profil-alt me-2"></i> Profil
+            <a href="<?= base_url('user/profile'); ?>"
+              class="nav-link active d-flex align-items-center" aria-current="page"
+              style="background-color: rgb(222, 164, 173); border-radius: 5px;">
+              <img src="<?= base_url('/img/icon/profil.png');?>" alt="riwayat" class="me-2"
+                style="width: 17px; height: 17px; background-color: rgb(222, 164, 173); border-radius: 50%;">
+              Profil
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link link-dark">
-              <i class="bx bx-riwayatPemesanan me-2"></i> Riwayat Pemesanan
+            <a href="<?= base_url('user/history'); ?>" class="nav-link link-dark d-flex align-items-center" 
+              style="border-radius: 5px;">
+              <img src="<?= base_url('/img/icon/riwayat.png');?>" alt="profil" class="me-2"
+                style="width: 17px; height: 17px; border-radius: 50%;">
+              Riwayat Pemesanan
             </a>
           </li>
-          <li>
-            <a href="#" class="nav-link link-dark">
-              <i class="bx bx-cart me-2"></i> Chat
+          <li class="nav-item">
+            <a href="<?= base_url('user/terms'); ?>" class="nav-link link-dark d-flex align-items-center" 
+              style="border-radius: 5px;">
+              <img src="<?= base_url('/img/icon/syarat.png');?>" alt="riwayat" class="me-2"
+                style="width: 17px; height: 17px; border-radius: 50%;">
+              Syarat dan Ketentuan
             </a>
           </li>
-          <li>
-            <a href="#" class="nav-link link-dark">
-              <i class="bx bx-box me-2"></i> Syarat dan Ketentuan
+          <li class="nav-item">
+            <a href="<?= base_url('user/report'); ?>" class="nav-link link-dark d-flex align-items-center" 
+              style="border-radius: 5px;">
+              <img src="<?= base_url('/img/icon/bantuan.png');?>" alt="riwayat" class="me-2"
+                  style="width: 17px; height: 17px; border-radius: 50%;">
+              Bantuan
             </a>
           </li>
-          <li>
-            <a href="#" class="nav-link link-dark">
-              <i class="bx bx-user me-2"></i> Bantuan
-            </a>
-          </li>
-          <li>
-            <a href="<?= url_to('logout'); ?>" class="nav-link link-dark">
-              <i class="bx bx-user me-2"></i> Keluar
+          <li class="nav-item">
+            <a href="<?= url_to('logout'); ?>" 
+              class="nav-link link-dark d-flex align-items-center" 
+              style="border-radius: 5px;">
+              <img src="<?= base_url('/img/icon/keluar.png');?>" 
+                  alt="keluar" 
+                  class="me-2"
+                  style="width: 17px; height: 17px; border-radius: 50%;">
+              Keluar
             </a>
           </li>
         </ul>

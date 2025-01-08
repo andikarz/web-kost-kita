@@ -9,6 +9,16 @@ class KostModel extends Model
     protected $table = 'kost_list';
     protected $primaryKey = 'id';
     protected $useTimestamps = true;
+    protected $allowedFields = [
+        'name', 
+        'address', 
+        'type', 
+        'price', 
+        'slug',
+        'capacity', 
+        'description',  
+        'image'
+    ];
 
     public function getKost($slug = false)
     {

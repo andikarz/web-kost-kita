@@ -11,7 +11,7 @@
         <!-- Form Pemesanan -->
         <div class="container">
             <h2>Pemesanan Kost</h2>
-            <form action="<?= base_url('/user/'.$kost['slug'].'/order'); ?>" method="post" id="orderForm">
+            <form action="<?= base_url('user/'.$kost['slug'].'/order'); ?>" method="post" id="orderForm">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id_kost" value="<?= $kost['id']; ?>">
 

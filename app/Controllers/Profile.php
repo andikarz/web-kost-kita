@@ -4,15 +4,21 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UserModel;
+use App\Models\OrderModel;
+use App\Models\ReportModel;
 
 class Profile extends BaseController
 {
     protected $userModel;
+    protected $orderModel;
+    protected $reportModel;
 
     public function __construct()
     {
         // Inisialisasi UserModel
         $this->userModel = new UserModel();
+        $this->orderModel = new OrderModel();
+        $this->reportModel = new ReportModel();
     }
 
     public function index()
@@ -84,4 +90,68 @@ class Profile extends BaseController
 
         return redirect()->to('/user/profile');
     }
+
+    public function history()
+    {
+        // Mendapatkan ID pengguna yang sedang login
+        $userId = user()->id;
+
+        // Ambil data order beserta relasi ke tabel users, kost_list, dan kost_owners
+        $orders = $this->orderModel
+            ->select('
+                kost_orders.*, 
+                kost_list.name as kost_name
+            ')
+            ->join('kost_list', 'kost_list.id = kost_orders.id_kost') // Relasi ke tabel kost_list
+            ->where('kost_orders.id_user', $userId) // Filter berdasarkan ID order
+            ->findAll(); // Ambil satu data
+
+        // Data yang akan dikirim ke view
+        $data = [
+            'title' => 'Riwayat Pemesanan',
+            'orders' => $orders,
+        ];
+
+        return view('user/history', $data);
+    }
+
+    public function terms()
+    {
+        $data = [
+            'title' => 'Syarat dan Ketentuan',  
+        ];
+
+        return view('user/terms', $data);
+    }
+
+    public function report()
+    {
+        $data = [
+            'title' => 'Bantuan',  
+        ];
+
+        return view('user/report', $data);
+    }
+
+    public function createReport()
+    {
+        // Validasi input
+        if (!$this->validate([
+            'description' => 'required|string',
+        ])) {
+            return redirect()->back()->withInput()->with('validation', $this->validator);
+        }
+
+        // Simpan laporan ke database
+        $this->reportModel->save([
+            'id_user' => user()->id,
+            'description' => $this->request->getVar('description'),
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        // Set flashdata untuk notifikasi
+        session()->setFlashdata('success', 'Laporan berhasil dikirim.');
+        return redirect()->to('/user/report');
+    }
+
 }

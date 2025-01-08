@@ -14,24 +14,39 @@
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="<?= base_url('/admin/profile'); ?>" class="nav-link link-dark">
-            <i class="bx bx-profil-alt me-2"></i> Profile
+          <a href="<?= base_url('/admin/profile'); ?>" class="nav-link link-dark d-flex align-items-center" 
+             style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/profil.png');?>" alt="profil" class="me-2"
+                 style="width: 17px; height: 17px; border-radius: 50%;">
+            Profile
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/admin/kost'); ?>" class="nav-link link-dark">
-            <i class="bx bx-daftarKost me-2"></i> Daftar Kost
+          <a href="<?= base_url('/admin/kost'); ?>" class="nav-link link-dark d-flex align-items-center" 
+             style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/daftarKost.png');?>" alt="daftarKost" class="me-2"
+                 style="width: 17px; height: 17px; border-radius: 50%;">
+            Daftar Kost
           </a>
         </li>
-        <li>
-          <a href="<?= base_url('/admin/report'); ?>" class="nav-link active" aria-current="page" style="background-color:
-            rgb(222, 164, 173);">
-            <i class="bx bx-report me-2"></i> Report
+        <li class="nav-item">
+          <a href="<?= base_url('/admin/report'); ?>" 
+             class="nav-link active d-flex align-items-center" aria-current="page" 
+             style="background-color: rgb(222, 164, 173); border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/report.png');?>" alt="report" class="me-2"
+                 style="width: 17px; height: 17px; background-color: rgb(222, 164, 173); border-radius: 50%;">
+            Report
           </a>
         </li>
-        <li>
-          <a href="#" class="nav-link link-dark">
-            <i class="bx bx-keluar me-2"></i> Keluar
+        <li class="nav-item">
+          <a href="<?= url_to('logout'); ?>" 
+             class="nav-link link-dark d-flex align-items-center" 
+             style="border-radius: 5px;">
+            <img src="<?= base_url('/img/icon/keluar.png');?>" 
+                 alt="keluar" 
+                 class="me-2"
+                 style="width: 17px; height: 17px; border-radius: 50%;">
+            Keluar
           </a>
         </li>
       </ul>
@@ -51,35 +66,25 @@
                 <th>Report ID</th>
                 <th>User ID</th>
                 <th>Nama</th>
-                <th>Subyek</th>
                 <th>Deskripsi</th>
                 <th>Tanggal</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
+              <?php $i=1; ?>
+              <?php foreach ($report as $r) : ?>
               <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>Bernadya Ribka</td>
-                <td>Error pencarian kost</td>
-                <td>Sistem gagal menampilkan hasil</td>
-                <td>25-11-2024</td>
+                <td><?= $i++ ?></td>
+                <td><?= $r['id_user'] ?></td>
+                <td><?= $r['username'] ?></td>
+                <td><?= $r['description'] ?></td>
+                <td><?= $r['created_at'] ?></td>
                 <td>
                   <button class="btn btn-danger btn-sm">Hapus</button>
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>2</td>
-                <td>Alvi Anggraeni</td>
-                <td>Kesalahan Lokasi kost</td>
-                <td>Lokasi yang ditampilkan pada peta tidak sesuai</td>
-                <td>24-11-2024</td>
-                <td>
-                  <button class="btn btn-danger btn-sm">Hapus</button>
-                </td>
-              </tr>
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>
